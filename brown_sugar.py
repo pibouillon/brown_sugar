@@ -50,14 +50,14 @@ X_norm = scaler.fit_transform(X)
 y = data_array[1:1591,1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y , random_state=35)
 
-np.count_nonzero((y_train== 'BN'))
-np.count_nonzero((y_test== 'BN'))
+np.count_nonzero((y_train== 'brown'))
+np.count_nonzero((y_test== 'brown'))
 
 
 def from_letters_to_factor(data):
     # Define conditions for replacement
-    condition_bn = (data == "BN")
-    condition_non = (data == "non")
+    condition_bn = (data == "brown")
+    condition_non = (data == "non-brown")
     # Replace values based on conditions
     data[condition_bn] = 1
     data[condition_non] = 0
